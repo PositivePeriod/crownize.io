@@ -12,8 +12,6 @@ class Player {
     initKing(block) {
         this.king = block;
         this.winLand(block);
-        console.log('initking| ', this.king.player);
-        console.log('initking| ', this.king.player===this);
     }
 
     getNumberOfLand() {

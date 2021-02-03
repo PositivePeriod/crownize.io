@@ -26,7 +26,6 @@ export function startCapturingInput() {
     gameTable.addEventListener("contextmenu", handleClick);
     document.addEventListener("contextmenu", handleRightClick);
     window.addEventListener("keydown", handleKeyboard);
-
 }
 
 export function stopCapturingInput() {
@@ -114,7 +113,7 @@ function handleKeyboard(e) {
 }
 
 function withinMap(point) {
-    return 0 <= point.x && point.x < Constants.MAP_SIZE && 0 <= point.y && point.y < Constants.MAP_SIZE
+    return 0 <= point.x && point.x < Constants.GAME_OPTION.MAP_SIZE && 0 <= point.y && point.y < Constants.GAME_OPTION.MAP_SIZE
 }
 
 function distanceBetweenCells(fromCell, toCell) {

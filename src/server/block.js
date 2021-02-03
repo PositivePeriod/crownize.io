@@ -21,22 +21,22 @@ class Block {
         if (this.player !== null) {
             switch (this.type) {
                 case "King":
-                    if (turn % Constants.TURN_FOR_KING_UNIT === 0) {
+                    if (turn % Constants.GAME_OPTION.TURN_FOR_KING_UNIT === 0) {
                         this.unit++;
                     }
                     break;
                 case "City":
-                    if (turn % Constants.TURN_FOR_CITY_UNIT === 0) {
+                    if (turn % Constants.GAME_OPTION.TURN_FOR_CITY_UNIT === 0) {
                         this.unit++;
                     }
                     break;
                 case "Plain":
-                    if (turn % Constants.TURN_FOR_PLAIN_UNIT === 0) {
+                    if (turn % Constants.GAME_OPTION.TURN_FOR_PLAIN_UNIT === 0) {
                         this.unit++;
                     }
                     break;
                 case "Swamp":
-                    if (turn % Constants.TURN_FOR_SWAMP_UNIT === 0) {
+                    if (turn % Constants.GAME_OPTION.TURN_FOR_SWAMP_UNIT === 0) {
                         this.unit--;
                     }
                     break;

@@ -28,7 +28,7 @@ export const play = username => {
 
 export const updateCommand = command => {
     if (command !== null) {
-        console.info(`input | `, command);
+        console.info(`Input | `, command);
         socket.emit(Constants.MSG_TYPES.INPUT, command);
     }
 };

@@ -1,9 +1,6 @@
 import { connect, play, updateCommand } from './networking';
 import { inputDeque, startCapturingInput, stopCapturingInput } from './input';
 import { downloadAssets } from './assets';
-import { setHidden } from '../shared/util';
-
-
 import { createBeforeGame } from './before-game';
 import { createPlayGame } from './play-game';
 import './css/style.css';

@@ -36,7 +36,7 @@ class GameMap {
     }
 
     withinMap(point) {
-        return 0 <= point.x && point.x < Constants.MAP_SIZE && 0 <= point.y && point.y < Constants.MAP_SIZE
+        return 0 <= point.x && point.x < Constants.GAME_OPTION.MAP_SIZE && 0 <= point.y && point.y < Constants.GAME_OPTION.MAP_SIZE
     }
 
     updateTurn() {
