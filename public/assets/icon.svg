@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="600">
+    <ellipse cx="0" cy="0" rx="300" ry="300" stroke-width="1.0624999999999998" stroke="#000000" fill="#003D6D" transform="matrix(1 0 0 1 300 300)" class="" fill-opacity="1" />
+    <path d="M 3.8338770866394043 -113.08256530761719 L -91.27481079101562 61.91752243041992 L -209.20960998535156 -6.560760498046875 L -167.36175537109375 176.04806518554688 L 175.02951049804688 176.04808044433594 L 216.87741088867188 -6.560760498046875 L 98.94258880615234 61.91752243041992 L 3.8338770866394043 -113.08256530761719 Z " stroke-width="30" stroke="#FFFFFF" fill="#003D6D" class="" transform="matrix(1 0 0 1 296.166 210.064)" fill-opacity="1" stroke-opacity="1" stroke-linejoin="round" stroke-linecap="butt" />
+    <line x1="-174.99945068359375" y1="-0.7822332978248596" x2="175.00054931640625" y2="-0.7822332978248596" stroke-width="30" stroke-linejoin="round" stroke="#FFFFFF" transform="matrix(1 0 0 1 299.999 462.762)" class="" stroke-linecap="round" />
+</svg>

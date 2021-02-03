@@ -1,0 +1,110 @@
+$color-primary: #004d17;
+$color-secondary: #292929;
+
+$colors: ("red": "#ff0000",
+    "green": "#008000",
+    "blue": "#0000ff",
+    "purple": "#800080",
+    "teal": "#008080",
+    "lightblue": "#4363d8",
+    "orange": "#f58231",
+    "maroon": "#800000",
+    "yellow": "#b09f30",
+    "pink": "#f032e6",
+    "brown": "#9a6324",
+    "lightgreen": "#7ab78c");
+
+
+@each $name,
+$color in $colors {
+    .#{$name} {
+        background-color: unquote($color);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    background-color: $color-secondary;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+input {
+    text-align: center;
+    color: $color-primary;
+    font-size: 24px;
+    display: block;
+    margin: 10px;
+    padding: 5px 30px;
+    border: 0;
+    outline: 0;
+}
+
+#introduce {
+    color: white;
+}
+
+#username-input {
+    font-size: 24px;
+
+    border: 0;
+    border-width: 0;
+    border-radius: 3px;
+
+    outline: none;
+    display: block;
+
+    padding: 3px;
+    text-align: center;
+
+    &:hover {
+        outline: none;
+    }
+}
+
+#start-button {
+    color: $color-primary;
+    box-shadow: 3px 3px $color-primary;
+    font-size: 24px;
+
+    border: 0;
+    border-width: 0;
+    border-radius: 3px;
+
+    outline: none;
+    display: block;
+
+    margin: 5px;
+    padding: 5px 20px;
+
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        color: white;
+        background-color: $color-primary;
+        box-shadow: 3px 3px white;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

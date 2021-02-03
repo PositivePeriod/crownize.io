@@ -1,0 +1,253 @@
+/*
+$colors: ("red": "#ff0000",
+    "green": "#008000",
+    "blue": "#0000ff",
+    "purple": "#800080",
+    "teal": "#008080",
+    "lightblue": "#4363d8",
+    "orange": "#f58231",
+    "maroon": "#800000",
+    "yellow": "#b09f30",
+    "pink": "#f032e6",
+    "brown": "#9a6324",
+    "lightgreen": "#7ab78c");
+
+
+@each $name,
+$color in $colors {
+    .#{$name} {
+        background-color: unquote($color);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    background-color:;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+    width: 100%;
+}
+
+button {
+    font-size: 18px;
+    outline: none;
+    border: none;
+    color: black;
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: rgb(230, 230, 230);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+#game-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+#play-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    padding: 20px 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    text-align: center;
+
+    p {
+        margin-bottom: 0;
+    }
+
+    input {
+        font-size: 18px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid black;
+        margin-bottom: 5px;
+        padding: 3px;
+        text-align: center;
+
+        &:hover {
+            outline: none;
+        }
+    }
+}
+
+#leaderboard {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+
+    th,
+    td {
+        text-align: center;
+        padding: 2px 5px;
+    }
+}
+
+#game-map {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 1);
+    padding: 2px;
+
+    position: relative;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    background: #dcdcdc;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 2px black;
+    opacity: 1;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    background-size: 40px 40px
+
+    th,
+    td {
+        width: 120px;
+        height: 60px;
+        text-align: center;
+        border: 1px solid;
+
+                    width: 60px;
+            height: 60px;
+            max-width: 60px;
+            max-height: 60px;
+            min-width: 60px;
+            min-height: 60px;
+            font-size: 18px;
+            background-size: 48px 48px;
+
+        td.selectable,
+        td.attackable {
+            position: relative;
+            z-index: 20
+        }
+        
+        td.selectable:hover,
+        td.attackable:hover {
+            cursor: pointer
+        }
+        
+        #gameMap.pingmode td.selectable,
+        #gameMap.pingmode td.selectable:hover,
+        #gameMap.pingmode td.attackable:hover {
+            cursor: crosshair
+        }
+        
+        #gameMap td.selected {
+            border: 1px solid white
+        }
+        
+        #gameMap td.selected50 {
+            text-shadow: 1px 1px black
+        }
+        
+        #gameMap td.attackable {
+            opacity: .4
+        }
+        
+        #gameMap td.city,
+        #gameMap td.general,
+        #gameMap td.mountain,
+        #gameMap td.obstacle,
+        #gameMap td.swamp {
+            background-position: center;
+            background-repeat: no-repeat
+        }
+        
+        #gameMap td.city {
+            background-color: gray;
+            background-image: url('/city.png')
+        }
+        
+        #gameMap td.neutral {
+            background-color: gray
+        }
+        
+        #gameMap td.general {
+            background-image: url('/crown.png')
+        }
+        
+        #gameMap td.mountain {
+            background-image: url('/mountain.png');
+            background-color: #bbb
+        }
+        
+        #gameMap td.obstacle {
+            background-image: url('/obstacle.png')
+        }
+        
+        #gameMap td.swamp {
+            background-image: url('/swamp.png');
+            background-color: gray
+        }
+        
+        #gameMap td.fog {
+            border: 1px solid transparent;
+            background-color: rgba(255, 255, 255, 0.1)
+        }
+        
+        #gameMap td.fog.selected {
+            border: 1px solid white
+        }
+    }
+}
+
+#disconnect-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+
+    div {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        padding: 15px 20px;
+        background-color: white;
+        border-radius: 5px;
+        text-align: center;
+
+    }
+}*/

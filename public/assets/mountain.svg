@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="600">
+    <g transform="matrix(1 0 0 1 300 300)" stroke-linecap="round">
+        <path d="M -103.83987426757812 -7.40545654296875 L -28.83984375 -112.40542602539062 L 101.16015625 112.59451293945312 " stroke-width="15" stroke="#000000" fill="none" class="" transform="matrix(1 0 0 1 128.84 42.405)" fill-opacity="null" stroke-opacity="1" stroke-linejoin="round" />
+        <path d="M 142.97634887695312 104.4486083984375 L 5.9762725830078125 -151.5513916015625 L -144.023681640625 148.45242309570312 " stroke-width="15" stroke="#000000" fill="none" class="" transform="matrix(1 0 0 1 -85.976 -3.44897)" stroke-opacity="1" stroke-linejoin="round" />
+    </g>
+</svg>

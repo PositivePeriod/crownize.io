@@ -1,0 +1,131 @@
+.red {
+  background-color: #ff0000;
+}
+
+.green {
+  background-color: #008000;
+}
+
+.blue {
+  background-color: #0000ff;
+}
+
+.purple {
+  background-color: #800080;
+}
+
+.teal {
+  background-color: #008080;
+}
+
+.lightblue {
+  background-color: #4363d8;
+}
+
+.orange {
+  background-color: #f58231;
+}
+
+.maroon {
+  background-color: #800000;
+}
+
+.yellow {
+  background-color: #b09f30;
+}
+
+.pink {
+  background-color: #f032e6;
+}
+
+.brown {
+  background-color: #9a6324;
+}
+
+.lightgreen {
+  background-color: #7ab78c;
+}
+
+.hidden {
+  display: none;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background-color: #292929;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+input {
+  text-align: center;
+  color: #004d17;
+  font-size: 24px;
+  display: block;
+  margin: 10px;
+  padding: 5px 30px;
+  border: 0;
+  outline: 0;
+}
+
+#introduce {
+  color: white;
+}
+
+#username-input {
+  font-size: 24px;
+  border: 0;
+  border-width: 0;
+  border-radius: 3px;
+  outline: none;
+  display: block;
+  padding: 3px;
+  text-align: center;
+}
+
+#username-input:hover {
+  outline: none;
+}
+
+#start-button {
+  color: #004d17;
+  -webkit-box-shadow: 3px 3px #004d17;
+          box-shadow: 3px 3px #004d17;
+  font-size: 24px;
+  border: 0;
+  border-width: 0;
+  border-radius: 3px;
+  outline: none;
+  display: block;
+  margin: 5px;
+  padding: 5px 20px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+#start-button:hover {
+  color: white;
+  background-color: #004d17;
+  -webkit-box-shadow: 3px 3px white;
+          box-shadow: 3px 3px white;
+}
+
+#start-button:focus {
+  outline: none;
+}
