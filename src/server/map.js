@@ -1,7 +1,6 @@
 const Block = require('./block');
 const Point = require('../shared/point');
 const { getRandomInt } = require('../shared/util');
-const Constants = require('../shared/constants');
 
 const directions = [
     new Point(-1, -1), new Point(0, -1), new Point(1, -1),
@@ -36,7 +35,7 @@ class GameMap {
     }
 
     withinMap(point) {
-        return 0 <= point.x && point.x < Constants.GAME_OPTION.MAP_SIZE && 0 <= point.y && point.y < Constants.GAME_OPTION.MAP_SIZE
+        return 0 <= point.x && point.x < this.width && 0 <= point.y && point.y < this.height;
     }
 
     updateTurn() {

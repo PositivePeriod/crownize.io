@@ -52,5 +52,5 @@ function handleInput(command) {
 
 function onDisconnect() {
     console.info(`Remove player | ${this.id}`);
-    game.tryToRemovePlayer.push([this]);
+    game.tryToRemovePlayer.push(this);
 }

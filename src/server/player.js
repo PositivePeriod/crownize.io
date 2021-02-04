@@ -45,6 +45,12 @@ class Player {
             this.king.player.winLand(block);
         });
     }
+
+    beNeutralized() {
+        this.land.forEach(block => {
+            block.beNeutralized();
+        });
+    }
 }
 
 module.exports = Player;

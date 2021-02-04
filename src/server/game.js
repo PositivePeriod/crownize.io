@@ -36,9 +36,7 @@ class Game {
         this.tryToRemovePlayer.forEach(socket => { this.lobby.removePlayer(socket) });
         this.tryToAddPlayer = [];
         this.tryToRemovePlayer = [];
-
-
-
+        
         // Apply command
         this.lobby.sockets.forEach((socket, playerID) => {
             const deque = this.lobby.findDeque(playerID);

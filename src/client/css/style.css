@@ -129,3 +129,93 @@ input {
 #start-button:focus {
   outline: none;
 }
+
+#game-map {
+  table-layout: fixed;
+}
+
+#game-map td {
+  position: relative;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  background: #dcdcdc;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 2px black;
+  opacity: 1;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  background-size: 40px 40px;
+}
+
+#game-map td .selected {
+  position: relative;
+  z-index: 20;
+  border: 1px solid white;
+}
+
+#game-map td .selected:hover {
+  cursor: pointer;
+}
+
+#game-map td .attackable {
+  position: relative;
+  z-index: 20;
+  opacity: .4;
+}
+
+#game-map td .attackable:hover {
+  cursor: pointer;
+}
+
+#game-map td .king,
+#game-map td .city,
+#game-map td .plain,
+#game-map td .swamp {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#game-map td .king {
+  background-image: url("/assets/crown.svg");
+}
+
+#game-map td .city {
+  background-color: gray;
+  background-image: url("/assets/city.svg");
+}
+
+#game-map td .neutral {
+  background-color: gray;
+}
+
+#game-map td .mountain {
+  background-image: url("/assets/mountain.png");
+  background-color: #bbbbbb;
+}
+
+#game-map td .obstacle {
+  background-image: url("/assets/obstacle.png");
+}
+
+#game-map td .swamp {
+  background-image: url("/assets/swamp.png");
+  background-color: gray;
+}
+
+#game-map td .fog {
+  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#game-map td .fog.selected {
+  border: 1px solid white;
+}

@@ -28,6 +28,10 @@ class Lobby {
 
     removePlayer(socket) {
         var playerID = socket.id;
+        var player = this.players.get(playerID);
+        if (player.isAlive()) {
+            player.beNeutralized();
+        }
         try {
             this.sockets.delete(playerID);
             this.deques.delete(playerID);

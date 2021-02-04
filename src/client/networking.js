@@ -38,3 +38,9 @@ function disconnectFromServer() {
     //
     createDisconnectGame();
 }
+
+window.onbeforeunload = function() {
+    socket.emit('disconnect');
+    delete e['returnValue'];
+    return "저장되지 않은 변경사항이 있습니다. 정말 페이지를 떠나실 건 가요?";
+};

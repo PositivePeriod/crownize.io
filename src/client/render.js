@@ -42,10 +42,10 @@ function updateMap(gameMap, colorMap) {
         for (var j = 0; j < Constants.GAME_OPTION.MAP_SIZE; j++) {
             var cell = gameTable.rows[j].cells[i];
             if (gameMap[i][j] === null) {
-                cell.innerHTML = 'Fog';
-                cell.style.backgroundColor = 'gray';
+                cell.classList.add('Fog');
             } else {
-                cell.innerHTML = `${gameMap[i][j].type}\n${gameMap[i][j].unit}`
+                cell.classList.add(gameMap[i][j].type);
+                cell.innerHTML = gameMap[i][j].unit === 0 ? '': gameMap[i][j].unit.toString();
                 cell.style.backgroundColor = colorMap.get(gameMap[i][j].username) ? colorMap.get(gameMap[i][j].username) : "white";
             }
         }
