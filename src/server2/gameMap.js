@@ -1,4 +1,3 @@
-const Block = require('./block');
 const Point = require('../shared/point');
 const { getRandomInt } = require('../shared/util');
 
@@ -7,21 +6,79 @@ const directions = [
     new Point(-1, 0), new Point(0, 0), new Point(1, 0),
     new Point(-1, 1), new Point(0, 1), new Point(1, 1)
 ];
+
+class Block {
+    constructor(type) {
+        this.type = type;
+        this.player = null;
+        this.unit = 0;
+    }
+
+    reset(type, player, unit) {
+        this.type = type;
+        this.player = player;
+        this.unit = unit;
+
+    }
+
+    enterUnit(player, unit) {
+        if (this.player === player) {
+            this.unit += unit;
+        } else {
+            this.unit -= unit;
+            if (this.unit < 0) {
+                this.unit = -this.unit;
+                this.player = player;
+            } else if (this.unit === 0) {
+                this.player = null;
+            }
+        }
+    }
+
+    leaveUnit() {
+        var unit = this.movableUnit();
+        this.unit -= unit;
+        return unit
+    }
+
+    leaveHalfUnit() {
+        var unit = Math.ceil(this.movableUnit() / 2);
+        this.unit -= unit;
+        return unit
+    }
+
+    get movableUnit() {
+        return Math.max(this.unit - 1, 0)
+    }
+
+    get view() {
+        return {
+            type: this.type,
+            unit: this.unit,
+            player: this.player
+        }
+    }
+}
+
 class GameMap {
-    constructor(width, height, data) {
+    constructor(mapData) {
+        // TODO get data from mapData
         this.width = width;
         this.height = height;
 
-        this.turn = 0;
-        this.map = Array.from(Array(this.width), () => Array(this.height).fill(null));
-        this.initMap(data);
+        this.map;
+        this.makeMap(mapData);
     }
 
-    initMap(data) {
-        data = data || Array.from(Array(this.width), () => Array(this.height).fill("Plain"));
+    assignKing() {
+        
+    }
+
+    makeMap(mapData) {
+        this.map = Array.from(Array(this.width), () => new Array(this.height));
         for (let i = 0; i < this.width; i++) {
             for (let j = 0; j < this.height; j++) {
-                this.map[i][j] = new Block(i, j, data[i][j])
+                this.map[i][j] = new Block(data[i][j] ? data[i][j] : null)
             }
         }
     }
@@ -38,17 +95,7 @@ class GameMap {
         return 0 <= point.x && point.x < this.width && 0 <= point.y && point.y < this.height;
     }
 
-    updateTurn() {
-        this.turn++;
-    }
 
-    updateUnit() {
-        for (let i = 0; i < this.width; i++) {
-            for (let j = 0; j < this.height; j++) {
-                this.map[i][j].updateUnit(this.turn);
-            }
-        }
-    }
 
     command(player, type, focusData, dirData) {
         var focus = new Point(focusData.x, focusData.y);

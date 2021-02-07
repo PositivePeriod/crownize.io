@@ -1,17 +1,17 @@
-const Constants = require('../shared/constants');
+const { GAME_OPTION, MSG_TYPES } = require('../shared/constants');
 const Lobby = require('./lobby');
 const GameMap = require('./map');
 
 
 class Game {
     constructor() {
-        this.map = new GameMap(Constants.GAME_OPTION.MAP_SIZE, Constants.GAME_OPTION.MAP_SIZE);
+        this.map = new GameMap(GAME_OPTION.MAP_SIZE, GAME_OPTION.MAP_SIZE);
         this.lobby = new Lobby();
 
         this.tryToAddPlayer = [];
         this.tryToRemovePlayer = [];
 
-        setInterval(this.update.bind(this), Constants.GAME_OPTION.TURN_IN_MILLISECOND);
+        setInterval(this.update.bind(this), GAME_OPTION.TURN_IN_MILLISECOND);
     }
 
     handleInput(socket, command) {
@@ -25,7 +25,7 @@ class Game {
         this.map.updateUnit();
 
         if (this.map.turn % 50 === 0) {
-            console.log(`Turn ${this.map.turn}`);
+            console.info(`Turn ${this.map.turn}`);
         }
         // Update players
         this.tryToAddPlayer.forEach((value) => {
@@ -36,7 +36,7 @@ class Game {
         this.tryToRemovePlayer.forEach(socket => { this.lobby.removePlayer(socket) });
         this.tryToAddPlayer = [];
         this.tryToRemovePlayer = [];
-        
+
         // Apply command
         this.lobby.sockets.forEach((socket, playerID) => {
             const deque = this.lobby.findDeque(playerID);
@@ -53,7 +53,7 @@ class Game {
             const player = this.lobby.findPlayer(playerID);
             if (!player.isAlive()) {
                 player.beDominated();
-                socket.emit(Constants.MSG_TYPES.GAME_OVER);
+                socket.emit(MSG_TYPES.GAME_OVER);
                 this.lobby.removePlayer(socket);
             }
         });
@@ -65,7 +65,7 @@ class Game {
         this.lobby.sockets.forEach((socket, playerID) => {
             const player = this.lobby.findPlayer(playerID);
 
-            socket.emit(Constants.MSG_TYPES.GAME_UPDATE, {
+            socket.emit(MSG_TYPES.GAME_UPDATE, {
                 turn: this.map.turn,
                 map: this.map.getViewPlayer(player, viewMap),
                 leaderboard: leaderboard

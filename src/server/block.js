@@ -1,4 +1,4 @@
-const Constants = require('../shared/constants');
+const { GAME_OPTION } = require('../shared/constants');
 
 class Block {
     constructor(x, y, type) {
@@ -13,7 +13,7 @@ class Block {
         this.unit = unit;
     }
 
-    changeType(type) {
+    setType(type) {
         this.type = type;
     }
 
@@ -21,30 +21,21 @@ class Block {
         if (this.player !== null) {
             switch (this.type) {
                 case "King":
-                    if (turn % Constants.GAME_OPTION.TURN_FOR_KING_UNIT === 0) {
-                        this.unit++;
-                    }
-                    break;
                 case "City":
-                    if (turn % Constants.GAME_OPTION.TURN_FOR_CITY_UNIT === 0) {
-                        this.unit++;
-                    }
-                    break;
                 case "Plain":
-                    if (turn % Constants.GAME_OPTION.TURN_FOR_PLAIN_UNIT === 0) {
+                    if (turn % GAME_OPTION.TURN_FOR[this.type.toUpperCase()] === 0) {
                         this.unit++;
                     }
                     break;
                 case "Swamp":
-                    if (turn % Constants.GAME_OPTION.TURN_FOR_SWAMP_UNIT === 0) {
+                case "Wild":
+                case "Mountain":
+                    if (turn % GAME_OPTION.TURN_FOR[this.type.toUpperCase()] === 0) {
                         this.unit--;
                     }
                     break;
-                case "Wild":
-                case "Mountain":
-                    break;
                 default:
-                    console.log('block.js | updateUnit | Cannot reach here'+this.type)
+                    console.warn('block.js | updateUnit | Cannot reach here' + this.type)
                     break;
             }
         }
@@ -67,14 +58,14 @@ class Block {
     enterUnit(player, unit) {
         if (this.player === player) {
             this.unit += unit;
-            return;
-        }
-        if (this.unit > unit) {
-            this.unit -= unit;
-        } else if (this.unit === unit) {
-            this.beNeutralized();
-        } else if (this.unit < unit) {
-            this.beDominated(player, unit);
+        } else {
+            if (this.unit > unit) {
+                this.unit -= unit;
+            } else if (this.unit === unit) {
+                this.beNeutralized();
+            } else if (this.unit < unit) {
+                this.beDominated(player, unit);
+            }
         }
     }
 
@@ -90,7 +81,7 @@ class Block {
         return {
             type: this.type,
             unit: this.unit,
-            username: this.player !== null ? this.player.username : null
+            username: this.player !== null ? this.player.username : null // TODO TODO TODO
         }
     }
 }

@@ -19,6 +19,6 @@ function downloadAsset(assetName) {
     });
 }
 
-export const downloadAssets = () => { Promise.all(ASSET_NAMES.map(downloadAsset)).then(console.log("All essets downloaded")); };
+export const downloadAssets = () => { Promise.all(ASSET_NAMES.map(downloadAsset)).then(console.info("All essets downloaded")); };
 
 export const getAsset = assetName => assets[assetName];

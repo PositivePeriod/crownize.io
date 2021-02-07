@@ -1,6 +1,6 @@
 const InputDeque = require('../shared/deque');
 const Player = require('./player');
-
+const { getRandomHexColor } = require('../shared/util');
 
 class Lobby {
     constructor() {
@@ -10,12 +10,11 @@ class Lobby {
     }
 
     addPlayer(socket, username, king) {
-        const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        const randomColor = getRandomHexColor();
         var playerID = socket.id;
         this.sockets.set(playerID, socket);
         this.deques.set(playerID, new InputDeque());
         this.players.set(playerID, new Player(playerID, username, randomColor, king));
-        console.log(this.players.get(playerID).color);
     }
 
     findPlayer(playerID) {

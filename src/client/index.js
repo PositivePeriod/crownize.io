@@ -41,7 +41,7 @@ function playGame() {
 
     play(username);
 
-    console.log('playGame');
+    console.info('playGame');
 
     startCapturingInput();
     interval = setInterval(() => { updateCommand(inputDeque.pop()); }, 500);

@@ -1,5 +1,5 @@
 import escape from 'lodash/escape';
-import Constants from '../shared/constants';
+import { GAME_OPTION } from '../shared/constants';
 
 
 export function processGameUpdate(update) {
@@ -38,14 +38,14 @@ function updateLeaderboard(lbData) {
 function updateMap(gameMap, colorMap) {
     const gameTable = document.getElementById('game-map');
 
-    for (var i = 0; i < Constants.GAME_OPTION.MAP_SIZE; i++) {
-        for (var j = 0; j < Constants.GAME_OPTION.MAP_SIZE; j++) {
+    for (var i = 0; i < GAME_OPTION.MAP_SIZE; i++) {
+        for (var j = 0; j < GAME_OPTION.MAP_SIZE; j++) {
             var cell = gameTable.rows[j].cells[i];
             if (gameMap[i][j] === null) {
                 cell.classList.add('Fog');
             } else {
                 cell.classList.add(gameMap[i][j].type);
-                cell.innerHTML = gameMap[i][j].unit === 0 ? '': gameMap[i][j].unit.toString();
+                cell.innerHTML = gameMap[i][j].unit === 0 ? '' : gameMap[i][j].unit.toString();
                 cell.style.backgroundColor = colorMap.get(gameMap[i][j].username) ? colorMap.get(gameMap[i][j].username) : "white";
             }
         }

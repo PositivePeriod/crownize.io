@@ -1,4 +1,4 @@
-import Constants from "../shared/constants";
+import { GAME_OPTION } from "../shared/constants";
 import InputDeque from "../shared/deque";
 import Point from "../shared/point";
 
@@ -113,11 +113,11 @@ function handleKeyboard(e) {
 }
 
 function withinMap(point) {
-    return 0 <= point.x && point.x < Constants.GAME_OPTION.MAP_SIZE && 0 <= point.y && point.y < Constants.GAME_OPTION.MAP_SIZE
+    return 0 <= point.x && point.x < GAME_OPTION.MAP_SIZE && 0 <= point.y && point.y < GAME_OPTION.MAP_SIZE;
 }
 
 function distanceBetweenCells(fromCell, toCell) {
-    return Math.abs(toCell.x - fromCell.x) + Math.abs(toCell.y - fromCell.y)
+    return Math.abs(toCell.x - fromCell.x) + Math.abs(toCell.y - fromCell.y);
 }
 
 function directionBetweenCells(fromCell, toCell) {

@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const socketio = require('socket.io');
 
-const Constants = require('../shared/constants');
+const { MSG_TYPES } = require('../shared/constants');
 const Game = require('./game');
 const webpackConfig = require('../../webpack.dev.js');
 
@@ -30,9 +30,10 @@ const io = socketio(server);
 
 // Listen for socket.io connections
 io.on('connection', socket => {
+    console.log('connection', this);
     console.info(`Player connect | ${socket.id}`);
-    socket.on(Constants.MSG_TYPES.JOIN_GAME, joinGame);
-    socket.on(Constants.MSG_TYPES.INPUT, handleInput);
+    socket.on(MSG_TYPES.JOIN_GAME, joinGame);
+    socket.on(MSG_TYPES.INPUT, handleInput);
     socket.on('disconnect', onDisconnect);
 });
 
@@ -40,6 +41,7 @@ io.on('connection', socket => {
 const game = new Game();
 
 function joinGame(username) {
+    console.log('join', this);
     // this === socket
     console.info(`Add player | ${this.id}| ${username}`);
     game.tryToAddPlayer.push([this, username]);

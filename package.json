@@ -1,5 +1,5 @@
 {
-  "name": "io-game-from-scratch",
+  "name": "crownize.io",
   "version": "1.0.0",
   "description": "",
   "main": "src/server/server.js",
@@ -8,10 +8,10 @@
     "lint": "eslint --cache --ext .js,.jsx src/",
     "develop": "cross-env NODE_ENV=development node src/server/server.js",
     "start": "cross-env NODE_ENV=production node src/server/server.js",
-    "test": "jest"
+    "logger": "node config/winston.js"
   },
-  "author": "Victor Zhou",
-  "license": "MIT",
+  "author": "PositivePeriod",
+  "license": "Private",
   "dependencies": {
     "babel-plugin-transform-remove-console": "^6.9.4",
     "express": "^4.17.1",
@@ -23,7 +23,9 @@
     "socket.io-client": "^2.3.0",
     "throttle-debounce": "^2.1.0",
     "webpack": "^4.43.0",
-    "webpack-dev-middleware": "^3.7.2"
+    "webpack-dev-middleware": "^3.7.2",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
