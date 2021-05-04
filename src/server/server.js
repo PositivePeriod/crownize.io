@@ -2,6 +2,7 @@ const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const socketio = require('socket.io');
+require('dotenv').config();
 
 const { MSG_TYPES } = require('../shared/constants');
 const Game = require('./game');
